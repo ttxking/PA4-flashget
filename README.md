@@ -9,7 +9,7 @@ an UI application that downloads file from URL. It uses multiple threads to down
 This helps you speed up your downloads. If the file is larger than 50MB (52,428,800 bytes in binary) it will use 5 threads. Otherwise, it will use 1 thread
 
 ### Main Features
-![UI](https://s3-ap-southeast-1.amazonaws.com/img-in-th/bc316f9df957272c4bf09188098ab055.png)
+![UI](https://s3-ap-southeast-1.amazonaws.com/img-in-th/73ad581f4e2d726ca2c00fe4947dc40b.png)
 
 * **URL TextField**  - UI for the user to enter the URL
 * **Download Button**  - the user click on this button to download
@@ -23,7 +23,7 @@ This helps you speed up your downloads. If the file is larger than 50MB (52,428,
     * Enter URL 
     * Click Download Button
     
-    ![EnterURL](https://s3-ap-southeast-1.amazonaws.com/img-in-th/867fdca21b774483abfd52b983afbc28.png)
+    ![EnterURL](https://s3-ap-southeast-1.amazonaws.com/img-in-th/5ef5038bd9ab5ced15d4b644181e93d8.png)
     
 2. After click Download Button
     * enter the file name (the default file name is from URL)
@@ -37,15 +37,15 @@ This helps you speed up your downloads. If the file is larger than 50MB (52,428,
     * the progressbar will update the process of the download
         
     If the file is more than 50MB it will use 5 threads
-    ![ShowProgress>50MB](https://s3-ap-southeast-1.amazonaws.com/img-in-th/88edde18d45d68cf5bebe6e65bcbf66b.png)
+    ![ShowProgress>50MB](https://s3-ap-southeast-1.amazonaws.com/img-in-th/0bad143da05f04dc6d8d9ea770a532d3.png)
     Otherwise it will use one thread
-    ![ShowPorgress<50MB](https://s3-ap-southeast-1.amazonaws.com/img-in-th/ce06a6f0854c82c42571e09768940c91.png)
+    ![ShowProgress<50MB](https://s3-ap-southeast-1.amazonaws.com/img-in-th/c007b659b0787dd20ea27278ee0bd284.png)
     
 4. After the download is complete
     * Status Label will show "Download Completed"
     * You can see the time used in the terminal
     
-    ![Done](https://s3-ap-southeast-1.amazonaws.com/img-in-th/d789f963ade592e9b3b223846a67b30e.png)
+    ![Done](https://s3-ap-southeast-1.amazonaws.com/img-in-th/fc5dcded4de78c42015b1d533fd16e7e.png)
     #### Extra
     
     * Cancel the download - when the user click cancel all tasks will stop and also the progressBar. The Label will show
@@ -89,11 +89,11 @@ java --module-path /path/to/javafx11/lib/ --add-modules javafx.controls,javafx.f
 5. Using RandomAccessFile class to go to any location in a file and then write (or read) starting at that location.
 
 
-## Technology 
+## Technology Used
 - JavaFX11
 - Scene Builder
 - HTTP connection
-- JDK11
+- JDK 11.0.5
 
 
 ### Design Pattern

@@ -1,0 +1,35 @@
+* {
+    -green : #2ecc71;
+    -white : #efefef;
+    -black : rgba(0, 0, 0, 0.87);
+}
+
+.root{
+    -fx-background-color : -white;
+    -fx-fill-width : true;
+    -fx-fill-height : true;
+    -fx-focus-color : transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.label{
+    -fx-text-fill : -black;
+}
+
+.text-field{
+    -fx-highlight-fill : -black;
+    -fx-highlight-text-fill : -black;
+}
+
+.text-field {
+    -fx-prompt-text-fill: -black;
+}
+
+.text-field:empty .text {
+    -fx-effect: null ;
+}
+
+.progress-bar>*.bar{
+    -fx-background-color : -green;
+}
+
