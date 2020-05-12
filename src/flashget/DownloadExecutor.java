@@ -31,14 +31,26 @@ public class DownloadExecutor extends Controller {
      * @param ProgressBarArray progressbar array of sub threads
      * @param progressBar main progressbar to update progress
      */
-    public void Download(URL url, long length, File outputFile,  Label downloadLabel, ProgressBar[] ProgressBarArray , ProgressBar progressBar) {
+    public void Download(URL url, long length, File outputFile,  Label downloadLabel, Label threadsLabel, ProgressBar[] ProgressBarArray , ProgressBar progressBar) {
+        int threadUsed;
+
+        // check if file is larger than 50MB (52,428,800 in binary)
+        if (length <= 52_428_800) { // less than 50 MB
+            threadUsed = 1; // 1 thread
+        } else { // more than 50 mb
+            threadUsed = 5; // 5 thread
+        }
 
         // size of each thread
         long chunkSize = 4096 * 4;
         long chunkNumber = (long) (Math.ceil(length / chunkSize));
-        size = (chunkNumber / 5) * chunkSize;
+        size = (chunkNumber / threadUsed) * chunkSize;
 
-        int threadUsed = 5;
+        // reset visibility every time download new file
+        for(ProgressBar pb : ProgressBarArray) {
+            pb.setVisible(true);
+        }
+        threadsLabel.setVisible(true);
 
 
         // update Label that shows byte downloaded
@@ -94,12 +106,21 @@ public class DownloadExecutor extends Controller {
             System.out.println("Stating thread" + (i + 1));
 
         }
-        // update the main progress bar according to the sub-thread
-        progressBar.progressProperty().bind(tasklist.get(0).progressProperty().multiply(0.2).add(
-                tasklist.get(1).progressProperty().multiply(0.2).add(tasklist.get(2).progressProperty().multiply(0.2).add(
-                        tasklist.get(3).progressProperty().multiply(0.2).add(tasklist.get(4).progressProperty().multiply(0.2))
-                ))
-        ));
+        if(threadUsed == 5) {
+            // update the main progress bar according to the sub-thread
+            progressBar.progressProperty().bind(tasklist.get(0).progressProperty().multiply(0.2).add(
+                    tasklist.get(1).progressProperty().multiply(0.2).add(tasklist.get(2).progressProperty().multiply(0.2).add(
+                            tasklist.get(3).progressProperty().multiply(0.2).add(tasklist.get(4).progressProperty().multiply(0.2))
+                    ))
+            ));
+        } else {
+            progressBar.progressProperty().bind((tasklist.get(0).progressProperty()));
+            for(ProgressBar pb : ProgressBarArray) {
+                pb.setVisible(false);
+            }
+            threadsLabel.setVisible(false);
+        }
+
 
         executor.shutdown();
     }

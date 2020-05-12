@@ -6,7 +6,7 @@
 
 ### Description :
 an UI application that downloads file from URL. It uses multiple threads to download parts of a file in parallel. 
-This helps you speed up your downloads. 
+This helps you speed up your downloads. If the file is larger than 50MB (52,428,800 bytes in binary) it will use 5 threads. Otherwise, it will use 1 thread
 
 ### Main Features
 ![UI](https://s3-ap-southeast-1.amazonaws.com/img-in-th/bc316f9df957272c4bf09188098ab055.png)
@@ -33,17 +33,19 @@ This helps you speed up your downloads.
     ![FileChooser](https://s3-ap-southeast-1.amazonaws.com/img-in-th/969a7ee53f1fb768716bbd66dc7885be.png)
     
 3. After selected file destination
-    * the program will start downloading
+    * the program will start downloading 
     * the progressbar will update the process of the download
-    
-    ![ShowProgress](https://s3-ap-southeast-1.amazonaws.com/img-in-th/3a1a00976734f13e4574b0c403f8c1e1.png)
+        
+    If the file is more than 50MB it will use 5 threads
+    ![ShowProgress>50MB](https://s3-ap-southeast-1.amazonaws.com/img-in-th/88edde18d45d68cf5bebe6e65bcbf66b.png)
+    Otherwise it will use one thread
+    ![ShowPorgress<50MB](https://s3-ap-southeast-1.amazonaws.com/img-in-th/ce06a6f0854c82c42571e09768940c91.png)
     
 4. After the download is complete
     * Status Label will show "Download Completed"
     * You can see the time used in the terminal
     
-    ![Done](https://s3-ap-southeast-1.amazonaws.com/img-in-th/eaed169e02c1e8197e06ca1a7d03ae9f.png)   
-    
+    ![Done](https://s3-ap-southeast-1.amazonaws.com/img-in-th/d789f963ade592e9b3b223846a67b30e.png)
     #### Extra
     
     * Cancel the download - when the user click cancel all tasks will stop and also the progressBar. The Label will show
@@ -56,7 +58,9 @@ This helps you speed up your downloads.
     ![Errors](https://s3-ap-southeast-1.amazonaws.com/img-in-th/9132dead74c3d945ddddf69c0cb40cb9.png)
     
     * Clear - when the users click on this buttons , the text field will be cleared. The Status Label will be "status"
-    ![Clear](https://s3-ap-southeast-1.amazonaws.com/img-in-th/960ae3f7507315011b51d7abee791eea.png)
+    and the progress bar will become 5 as defaults
+    
+    ![Clear](https://s3-ap-southeast-1.amazonaws.com/img-in-th/b55e3bc5b18e36c92df041eb9a778ad6.png)
    
 
 

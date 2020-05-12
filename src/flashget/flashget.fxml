@@ -23,6 +23,6 @@
       <ProgressBar fx:id="threadPB3" layoutX="354.0" layoutY="131.0" prefHeight="20.0" prefWidth="129.0" progress="0.0" />
       <ProgressBar fx:id="threadPB4" layoutX="483.0" layoutY="131.0" prefHeight="20.0" prefWidth="129.0" progress="0.0" />
       <ProgressBar fx:id="threadPB5" layoutX="612.0" layoutY="131.0" prefHeight="20.0" prefWidth="129.0" progress="0.0" />
-      <Label layoutX="21.0" layoutY="133.0" text="Threads:" />
+      <Label fx:id="threadsLabel" layoutX="21.0" layoutY="133.0" text="Threads:" />
    </children>
 </AnchorPane>

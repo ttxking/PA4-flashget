@@ -61,14 +61,11 @@ public class Controller {
     @FXML
     private ProgressBar threadPB5;
 
-    // string of URL
-    private String urlName;
+    @FXML
+    private Label threadsLabel;
 
     // size of byte in each thread
     protected long size;
-
-    // connection
-    private URLConnection connection;
 
     // length of file
     protected long length;
@@ -122,6 +119,19 @@ public class Controller {
         URLField.clear();
         downloadLabel.setText("Status");
         tasklist.clear();
+
+        // reset visibility
+        for(ProgressBar pb : ProgressBarArray) {
+            pb.setVisible(true);
+            // unbind to set value
+            pb.progressProperty().unbind();
+            pb.progressProperty().setValue(0);
+        }
+        //unbind to set value
+        progressBar.progressProperty().unbind();
+        progressBar.progressProperty().setValue(0);
+
+        threadsLabel.setVisible(true);
     }
 
 
@@ -149,7 +159,7 @@ public class Controller {
             // if download is not cancel execute download process
             if (!downloadCancel) {
                 downloadExecutor = new DownloadExecutor();
-                downloadExecutor.Download(url, length, outputFile, downloadLabel, ProgressBarArray, progressBar);
+                downloadExecutor.Download(url, length, outputFile, downloadLabel, threadsLabel, ProgressBarArray, progressBar);
             }
 
         } else {
