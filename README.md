@@ -100,6 +100,7 @@ java --module-path /path/to/javafx11/lib/ --add-modules javafx.controls,javafx.f
    * Observer Pattern => in DownloadExecutor class
    
 ### UML Diagram
+![UML](https://s3-ap-southeast-1.amazonaws.com/img-in-th/48a1ed88358ed09545c1fb0d61d5a78a.png)
 
 
 
