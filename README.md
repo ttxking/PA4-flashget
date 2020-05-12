@@ -64,9 +64,21 @@ This helps you speed up your downloads. If the file is larger than 50MB (52,428,
    
 
 
-### How to run
-    
 
+### How to run .jar file
+Verify that your Jar file is runnable by running it yourself. 
+
+The command is : 
+```  
+java -jar flashget.jar 
+```
+
+For Java 11 you need to specify the module path for JavaFX. 
+
+Enter:
+```  
+java --module-path /path/to/javafx11/lib/ --add-modules javafx.controls,javafx.fxml,javafx.graphics -jar flashget.jar
+```
 
 
 ### Educational Value
@@ -81,6 +93,7 @@ This helps you speed up your downloads. If the file is larger than 50MB (52,428,
 - JavaFX11
 - Scene Builder
 - HTTP connection
+- JDK11
 
 
 ### Design Pattern

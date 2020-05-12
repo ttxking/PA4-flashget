@@ -42,12 +42,8 @@ public class DownloadTask extends Task<Long> {
 
             // URL connection;
             URLConnection connection = url.openConnection(); // this one to get length
-//            URLConnection conn = url.openConnection(); // this one to set request property
 
-
-            // get the size of file at URL
-//            long length = connection.getContentLengthLong();
-
+            // set the range of thread
             if( size > 0) {
                 range = String.format("bytes=%d-%d", start, start+size-1);
             }
@@ -77,7 +73,7 @@ public class DownloadTask extends Task<Long> {
                 randomAccessFile.write(buffer, 0, n);
                 bytesRead += n;
 
-//                updateMessage(String.format("%d/%d",bytesRead+start ,size+start-1));
+                // update progress and value
                 updateProgress(bytesRead, size);
                 updateValue( bytesRead );
 

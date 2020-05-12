@@ -46,21 +46,27 @@ public class Controller {
     @FXML
     private Label Filename;
 
+    // ProgressBar of thread1
     @FXML
     private ProgressBar threadPB1;
 
+    // ProgressBar of thread2
     @FXML
     private ProgressBar threadPB2;
 
+    // ProgressBar of thread3
     @FXML
     private ProgressBar threadPB3;
 
+    // ProgressBar of thread4
     @FXML
     private ProgressBar threadPB4;
 
+    // ProgressBar of thread5
     @FXML
     private ProgressBar threadPB5;
 
+    // Label of threads
     @FXML
     private Label threadsLabel;
 
