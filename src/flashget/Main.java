@@ -12,7 +12,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("flashget.fxml"));
         primaryStage.setTitle("File Downloader");
-        primaryStage.setScene(new Scene(root, 939, 275));
+        primaryStage.setScene(new Scene(root, 939, 200));
         primaryStage.show();
     }
 

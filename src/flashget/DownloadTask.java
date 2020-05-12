@@ -1,6 +1,7 @@
 package flashget;
 
 import javafx.concurrent.Task;
+import javafx.scene.control.Alert;
 
 import java.io.*;
 import java.net.URL;
@@ -104,7 +105,9 @@ public class DownloadTask extends Task<Long> {
             System.out.printf("Elapsed %.6f sec\n", elapsed);
 
         } catch (IOException e) {
-            System.err.println(e.getMessage());
+            Alert alert = new Alert(Alert.AlertType.ERROR); // throw an error alert box
+            alert.setContentText("File can't be written or File is not found");
+            alert.show();
         }
         return bytesRead;
     }
