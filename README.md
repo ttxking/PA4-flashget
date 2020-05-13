@@ -51,7 +51,7 @@ This helps you speed up your downloads. If the file is larger than 50MB (52,428,
     * Cancel the download - when the user click cancel all tasks will stop and also the progressBar. The Label will show
 "Cancelled".
         
-    ![Cancel](https://s3-ap-southeast-1.amazonaws.com/img-in-th/532efc05b0431f6c53deb070e4933296.png)
+    ![Cancel](https://s3-ap-southeast-1.amazonaws.com/img-in-th/c38eb19f907ef7cb683f5bf726c38969.png)
     
     * Invalid URL - when the user enters non-URL text , the program will prompt an error 
     
@@ -60,7 +60,7 @@ This helps you speed up your downloads. If the file is larger than 50MB (52,428,
     * Clear - when the users click on this buttons , the text field will be cleared. The Status Label will be "status"
     and the progress bar will become 5 as defaults
     
-    ![Clear](https://s3-ap-southeast-1.amazonaws.com/img-in-th/b55e3bc5b18e36c92df041eb9a778ad6.png)
+    ![Clear](https://s3-ap-southeast-1.amazonaws.com/img-in-th/3af2adbaa76b258d717a82594c2b16f3.png)
    
 
 
